@@ -98,6 +98,14 @@
       <div class="question">
         <label for="course-date">📅 Date of the Course</label>
         <input type="date" id="course-date" name="course_date" required>
+<script>
+  // Set today's date in the course date field
+  document.addEventListener("DOMContentLoaded", function () {
+    const dateInput = document.getElementById("course-date");
+    const today = new Date().toISOString().split("T")[0];
+    dateInput.value = today;
+  });
+</script>
       </div>
 
       <div class="question">
