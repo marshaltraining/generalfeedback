@@ -92,11 +92,11 @@
     <form id="feedback-form">
       <div class="question">
         <label for="start-date">📅 Training Start Date</label>
-        <input type="date" id="start-date" name="start_date" min="2025-06-18" max="2025-06-20" required>
+        <input type="date" id="start-date" name="start_date" value="2025-06-18" min="2025-06-18" max="2025-06-20" required>
       </div>
       <div class="question">
         <label for="end-date">📅 Training End Date</label>
-        <input type="date" id="end-date" name="end_date" min="2025-06-18" max="2025-06-20" required>
+        <input type="date" id="end-date" name="end_date" value="2025-06-20" min="2025-06-18" max="2025-06-20" required>
       </div>
 
       <div class="question">
@@ -201,19 +201,6 @@
         confirmation.style.display = "block";
       } else {
         alert("❌ Error: Could not submit. Please try again later.");
-      }
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const startDate = document.getElementById("start-date");
-      const endDate = document.getElementById("end-date");
-      const today = new Date();
-      const minDate = new Date("2025-06-18");
-      const maxDate = new Date("2025-06-20");
-      if (today >= minDate && today <= maxDate) {
-        const todayStr = today.toISOString().split("T")[0];
-        startDate.value = todayStr;
-        endDate.value = todayStr;
       }
     });
   </script>
