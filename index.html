@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,8 +91,12 @@
 
     <form id="feedback-form">
       <div class="question">
-        <label for="course-date">📅 Select the Date You Attended</label>
-        <input type="date" id="course-date" name="course_date" min="2025-06-18" max="2025-06-20" required>
+        <label for="start-date">📅 Training Start Date</label>
+        <input type="date" id="start-date" name="start_date" min="2025-06-18" max="2025-06-20" required>
+      </div>
+      <div class="question">
+        <label for="end-date">📅 Training End Date</label>
+        <input type="date" id="end-date" name="end_date" min="2025-06-18" max="2025-06-20" required>
       </div>
 
       <div class="question">
@@ -200,12 +205,15 @@
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-      const dateInput = document.getElementById("course-date");
+      const startDate = document.getElementById("start-date");
+      const endDate = document.getElementById("end-date");
       const today = new Date();
       const minDate = new Date("2025-06-18");
       const maxDate = new Date("2025-06-20");
       if (today >= minDate && today <= maxDate) {
-        dateInput.value = today.toISOString().split("T")[0];
+        const todayStr = today.toISOString().split("T")[0];
+        startDate.value = todayStr;
+        endDate.value = todayStr;
       }
     });
   </script>
